@@ -1,5 +1,5 @@
 name: Tests
-on: 
+on:
   repository_dispatch:
     types: [tests-report]
   push:
@@ -25,7 +25,7 @@ jobs:
         env:
           IS_GITHUB_ACTION: true
         run: cd nft && cargo test -- --nocapture --color=always
-      - name: Run Rust integration tests
-        run: cd integration-tests/rs && cargo run --example integration-tests
+      # - name: Run Rust integration tests
+      #   run: cd integration-tests/rs && cargo run --example integration-tests
       - name: Run TypeScript integration tests
-        run: cd integration-tests/ts && yarn && yarn test 
+        run: cd integration-tests/ts && yarn && yarn test
