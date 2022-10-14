@@ -291,7 +291,7 @@ mod tests {
             .predecessor_account_id(accounts(2))
             .build());
         let balance = U128(100000000u128);
-        contract.nft_transfer_payout(accounts(3), token_id.clone(), 1, None, balance, 0);
+        contract.nft_transfer_payout(accounts(3), token_id.clone(), balance, Some(1), None);
 
         testing_env!(context
             .storage_usage(env::storage_usage())
