@@ -15,7 +15,7 @@ test.beforeEach(async t => {
         {
             initialBalance: NEAR.parse('100 N').toJSON(),
             method: "new_default_meta",
-            args: { owner_id: root }
+            args: { owner_id: root, royalty_bps: 100 }
         },
     );
     await root.call(

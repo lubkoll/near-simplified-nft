@@ -33,7 +33,7 @@ async fn main() -> anyhow::Result<()> {
     nft_contract
         .call(&worker, "new_default_meta")
         .args_json(serde_json::json!({
-            "owner_id": owner.id()
+            "owner_id": owner.id(), "royalty_bps": 100u32
         }))?
         .transact()
         .await?;
